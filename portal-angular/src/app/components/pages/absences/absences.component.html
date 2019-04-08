@@ -1,0 +1,35 @@
+<app-page [navSelectedItem]="HeaderOptions.Faltas">
+	<ul class="row">
+		<li class="list-group-item col-xs-10 offset-xs-1 col-md-6 offset-md-3" *ngFor="let absence of absences">
+			<p class="h5 card-title">
+				{{ absence.discipline }}
+				<span class="float-right">
+        {{ absence.getTotalAbsences() }}
+					<small>/{{ absence.credits * 5 }}</small>
+      			</span>
+			</p>
+
+			<ng-template [ngIf]="!absence.hasAbsences()" [ngIfElse]="absenceTable">
+				<hr>
+				<h6>Não há faltas registradas.</h6>
+			</ng-template>
+			<ng-template #absenceTable>
+				<hr>
+				<table class="table table-sm table-responsive-lg">
+					<thead>
+					<tr>
+						<th class="th-dark" width="16.66%"
+							*ngFor="let month of absence.getMonthNames(semester)">{{ month }}</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr>
+						<td width="16.66%"
+							*ngFor="let month of absence.getAbsencesOfSemester(semester)">{{ month }}</td>
+					</tr>
+					</tbody>
+				</table>
+			</ng-template>
+		</li>
+	</ul>
+</app-page>

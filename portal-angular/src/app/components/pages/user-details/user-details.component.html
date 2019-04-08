@@ -1,0 +1,37 @@
+<app-page>
+	<ul class="row">
+		<li class="list-group-item col-xs-10 offset-xs-1 col-md-6 offset-md-3">
+			<ng-template [ngIf]="isRequesting" [ngIfElse]="requestResult">
+				<h6>Carregando...</h6>
+			</ng-template>
+			<ng-template #requestResult>
+				<ng-template [ngIf]="requestError === null" [ngIfElse]="showError">
+					<span>
+						<p class="h5 card-title" style="display: inline">{{ user.name }} </p>
+						<small>(User: {{ user.username }})</small>
+					</span>
+
+					<div [ngSwitch]="user.role">
+						<small *ngSwitchCase="'1'">
+							Adm
+						</small>
+						<small *ngSwitchCase="'2'">
+							Coordenador
+						</small>
+						<small *ngSwitchCase="'3'">
+							Professor
+						</small>
+						<br>
+						<div>
+							<small> {{user.name}}</small>
+							<small>{{ user.email }}</small>
+						</div>
+					</div>
+				</ng-template>
+				<ng-template #showError>
+					{{ requestError }}
+				</ng-template>
+			</ng-template>
+		</li>
+	</ul>
+</app-page>

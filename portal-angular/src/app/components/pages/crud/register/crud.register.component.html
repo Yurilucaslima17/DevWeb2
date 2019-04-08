@@ -1,0 +1,22 @@
+<app-page [navSelectedItem]="HeaderOptions.Disciplinas">
+	<div>
+		<tr>
+			<td>
+				<input type="text" class="form-control has-feedback-left" placeholder="Disciplina" required ng-model="crud.discipline">
+			</td>
+			<td>
+				<input type="text" class="form-control has-feedback-left" placeholder="Professor" required ng-model="crud.professor">
+			</td>
+			<td>
+				<input type="text" class="form-control has-feedback-left" placeholder="Coordenador" required ng-model="crud.coordenador">
+			</td>
+			<td>
+				<button type="button" class="btn btn-info">Submeter</button>
+			</td>
+			<td>
+				<button type="button" class="btn">Cancelar</button>
+			</td>
+		</tr>
+	</div>
+	<a class="nav-link" [routerLink]="'/Disciplinas'">Voltar</a>
+</app-page>

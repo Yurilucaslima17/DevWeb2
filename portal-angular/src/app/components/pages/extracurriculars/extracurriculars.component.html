@@ -1,0 +1,32 @@
+<app-page [navSelectedItem]="HeaderOptions.AtivComplementar">
+	<ul class="row">
+		<li class="list-group-item col-xs-10 offset-xs-1 col-md-6 offset-md-3">
+      <span class="card-title">
+        <p class="h5" style="display: inline">
+          Total
+          <small> (horas)</small>
+        </p>
+        <h5 class="float-right">
+          {{ getTotalHours(extracurriculars) }}
+			<small>/120</small>
+        </h5>
+      </span>
+		</li>
+		<ng-template [ngIf]="extracurriculars.length === 0" [ngIfElse]="extracurricularsList">
+			<li class="list-group-item col-xs-10 offset-xs-1 col-md-6 offset-md-3">
+				<h6>
+					Não há atividades complementares registradas.
+				</h6>
+			</li>
+		</ng-template>
+		<ng-template #extracurricularsList>
+			<li class="list-group-item col-xs-10 offset-xs-1 col-md-6 offset-md-3"
+				*ngFor="let activity of extracurriculars">
+      <span>
+        {{ activity.name }}
+		  <h6 style="display: inline" class="float-right">+ {{ activity.hours }}</h6>
+      </span>
+			</li>
+		</ng-template>
+	</ul>
+</app-page>

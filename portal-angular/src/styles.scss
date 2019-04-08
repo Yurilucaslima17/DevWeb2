@@ -1,0 +1,63 @@
+/* You can add global styles to this file, and also import other style files */
+@import "app/components/shared/colors";
+
+/* Fonts */
+
+body {
+	font-family: Fira Sans, sans-serif !important;
+}
+
+h5.card-title {
+	font-weight: bold;
+}
+
+/* Others */
+
+@mixin border-invisible {
+	border: 1px solid $grey;
+}
+
+.bg-grey {
+	background-color: $grey !important;
+}
+
+.bg-blue-dark {
+	background-color: $blue-dark !important;
+}
+
+.bg-blue-light {
+	background-color: $blue-light !important;
+}
+
+h5,
+.h5 {
+	color: $font-color;
+	font-weight: 800;
+}
+
+h6 {
+	color: $font-color;
+	font-weight: 600;
+}
+
+hr {
+	border-top: 1px solid $grey !important;
+}
+
+li.list-group-item {
+	@include border-invisible;
+}
+
+td,
+th {
+	text-align: center;
+}
+
+th {
+	font-weight: 600;
+}
+
+thead > tr > th,
+td {
+	border: 1px solid transparent !important;
+}

@@ -1,0 +1,25 @@
+<app-page [isLogin]="true">
+	<ul class="row">
+		<li class="list-group-item col-xs-10 offset-xs-1 col-md-4 offset-md-4 bg-light">
+			<ng-template [ngIf]="errors.length !== 0">
+				<div class="alert alert-danger">
+					<ul>
+						<li *ngFor="let error of errors">{{ error }}</li>
+					</ul>
+				</div>
+			</ng-template>
+			<p class="h5 card-title">Entrar</p>
+			<hr>
+			<div class="form-group">
+				<label for="input-user">Usuário</label>
+				<input id="input-user" type="text" class="form-control" [(ngModel)]="username">
+			</div>
+			<div class="form-group">
+				<label for="input-password">Senha</label>
+				<input id="input-password" type="password" class="form-control" [(ngModel)]="password">
+			</div>
+			<br>
+			<input type="button" class="btn btn-dark btn-block" [value]="isRequesting ? 'Aguarde...' : 'Entrar'" [disabled]="isRequesting" (click)="onLoginClick()">
+		</li>
+	</ul>
+</app-page>

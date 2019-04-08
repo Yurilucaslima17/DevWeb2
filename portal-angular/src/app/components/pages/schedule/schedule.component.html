@@ -1,0 +1,22 @@
+<app-page [navSelectedItem]="HeaderOptions.HorarioAula">
+	<ul class="row">
+		<li class="list-group-item col-xs-10 offset-xs-1 col-md-6 offset-md-3"
+			*ngFor="let day of daysOfWeek; let index = index">
+			<p class="h5 card-title">{{ day }}</p>
+			<ng-template [ngIf]="getClasses(schedule, index).length === 0" [ngIfElse]="daySchedule">
+				<hr>
+				<h6>Não há aula nesse dia.</h6>
+			</ng-template>
+			<ng-template #daySchedule>
+				<hr>
+				<div *ngFor="let discipline of getClasses(schedule, index)">
+					<h6>
+						{{ discipline.discipline }}
+						<span class="float-right">{{ discipline.hour }} - {{ discipline.classroom }}</span>
+					</h6>
+					<p>{{ discipline.teacher }}</p>
+				</div>
+			</ng-template>
+		</li>
+	</ul>
+</app-page>

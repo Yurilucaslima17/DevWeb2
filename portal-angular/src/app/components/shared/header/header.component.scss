@@ -1,0 +1,28 @@
+@import '../colors';
+@import '../../../../styles';
+
+a.dropdown-item.dropdown-dark {
+	color: $navbar-color !important;
+}
+
+a.dropdown-item.dropdown-dark.active, a.dropdown-item.dropdown-dark:active {
+	background-color: $navbar-color !important;
+	color: white !important;
+}
+
+div.dropdown-menu {
+	@include border-invisible;
+}
+
+.dropdown-exit {
+	color: $red !important;
+}
+
+.dropdown-exit.active, .dropdown-exit:active {
+	background-color: $red !important;
+	color: white !important;
+}
+
+nav.navbar {
+	background-color: $navbar-color !important;
+}

@@ -1,0 +1,27 @@
+<app-page [navSelectedItem]="HeaderOptions.Disciplinas">
+	<ul class="row">
+		<li class="list-group-item col-xs-10 offset-xs-1 col-md-6 offset-md-3" *ngFor="let crud of cruds">
+			<p class="h5 card-title">{{ crud.discipline }}</p>
+			<hr>
+			<table class="table table-sm table-responsive-lg">
+				<thead>
+				<div>
+					<tr>
+						<td class="th-dark" width="25%">Disciplina: </td>
+						<td width="25%">{{ crud.discipline }}</td>
+					</tr>
+					<tr>
+						<td class="th-dark" width="25%">Professor: </td>
+						<td width="25%">{{ crud.professor.name }}</td>
+					</tr>
+					<tr>
+						<td class="th-dark" width="25%">Coordenador: </td>
+						<td width="25%">{{ crud.coordenador.name }}</td>
+					</tr>
+				</div>
+				</thead>
+			</table>
+		</li>
+	</ul>
+	<a class="nav-link" [routerLink]="'/registro-disciplina'">Adicionar disciplina</a>
+</app-page>
