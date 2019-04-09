@@ -1,0 +1,23 @@
+<app-page [navSelectedItem]="HeaderOptions.Usuario">
+	<div>
+		<tr>
+			<td>
+				<input type="text" class="form-control has-feedback-left" placeholder="Nome" required ng-model="user.name">
+			</td>
+			<td>
+				<input type="text" class="form-control has-feedback-left" placeholder="Cargo" required ng-model="user.role">
+			</td>
+			<td>
+				<input type="text" class="form-control has-feedback-left" placeholder="email" required ng-model="user.email">
+			</td>
+			<td>
+				<input type="text" class="form-control has-feedback-left" placeholder="senha" required ng-model="user.password">
+			</td>
+			<td>
+				<button type="button" class="btn btn-info" [routerLink]="'/'">Submeter</button>
+			</td>
+			<td>
+			</td>
+		</tr>
+	</div>
+</app-page>

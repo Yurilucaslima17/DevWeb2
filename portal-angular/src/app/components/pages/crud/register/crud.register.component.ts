@@ -7,10 +7,12 @@ import { BasePortalComponent } from 'src/app/components/shared/base-portal.compo
 	styleUrls: ['./crud.register.component.scss']
 })
 
-export class CrudComponentRegister extends BasePortalComponent {
+export class CrudRegisterComponent extends BasePortalComponent {
 	constructor() {
 	 super();
 	}
+
+
 }
 
 

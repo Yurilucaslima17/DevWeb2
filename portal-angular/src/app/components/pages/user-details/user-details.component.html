@@ -8,7 +8,7 @@
 				<ng-template [ngIf]="requestError === null" [ngIfElse]="showError">
 					<span>
 						<p class="h5 card-title" style="display: inline">{{ user.name }} </p>
-						<small>(User: {{ user.username }})</small>
+						<small>(User: {{ user.email }})</small>
 					</span>
 
 					<div [ngSwitch]="user.role">
@@ -22,10 +22,6 @@
 							Professor
 						</small>
 						<br>
-						<div>
-							<small> {{user.name}}</small>
-							<small>{{ user.email }}</small>
-						</div>
 					</div>
 				</ng-template>
 				<ng-template #showError>
@@ -34,4 +30,8 @@
 			</ng-template>
 		</li>
 	</ul>
+	<div [ngSwitch]="user.role">
+		<button *ngSwitchCase="'1'" type="button" class="btn btn-info" [routerLink]="'/registro-usuario'">Adicionar Usuário</button>
+		<button *ngSwitchCase="'2'" type="button" class="btn btn-info" [routerLink]="'/registro-usuario'">Adicionar Usuário</button>
+	</div>
 </app-page>

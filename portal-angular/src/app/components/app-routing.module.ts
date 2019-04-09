@@ -1,9 +1,10 @@
-import { CrudComponentRegister } from './pages/crud/register/crud.register.component';
+import { UserRegisterComponent } from './pages/user-details/user-register/user-register.component';
+import { CrudRegisterComponent } from './pages/crud/register/crud.register.component';
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 import { CrudComponent } from './pages/crud/crud.component';
 import {AbsencesComponent} from './pages/absences/absences.component';
-import {ScheduleComponent} from './pages/schedule/schedule.component';
+import {UserListComponent} from './pages/userList/UserList.component';
 import {ExtracurricularsComponent} from './pages/extracurriculars/extracurriculars.component';
 import {LoginComponent} from './pages/login/login.component';
 import {UserDetailsComponent} from './pages/user-details/user-details.component';
@@ -32,7 +33,7 @@ const routes: Routes = [
 	{
 		path: 'horario-aulas',
 		canActivate: [AuthGuardService],
-		component: ScheduleComponent
+		component: UserListComponent
 	},
 	{
 		path: 'atividades-complementares',
@@ -42,7 +43,12 @@ const routes: Routes = [
 	{
 		path: 'registro-disciplina',
 		canActivate: [AuthGuardService],
-		component: CrudComponentRegister
+		component: CrudRegisterComponent
+	},
+	{
+		path: 'registro-usuario',
+		canActivate: [AuthGuardService],
+		component: UserRegisterComponent
 	}
 ];
 

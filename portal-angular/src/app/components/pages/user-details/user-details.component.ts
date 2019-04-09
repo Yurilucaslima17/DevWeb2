@@ -14,7 +14,7 @@ export class UserDetailsComponent extends BasePortalComponent implements OnInit 
 
 	requestError: string = null;
 
-	user: User = new User(1, 'ALUNO BACANÃO', '123456', '123.456.789-00', 'jorginho@gmail.com', 2);
+	user: User = new User(1, 'ALUNO BACANÃO', '123456', 'jorginho@gmail.com', 2);
 
 	constructor(private http: HttpClient) {
 		super();

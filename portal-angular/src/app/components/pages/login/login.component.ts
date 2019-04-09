@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
 	errors: string[] = [];
 
 	password = '';
-	username = '';
+	email = '';
 
 	constructor(private http: HttpClient, private router: Router, private route: ActivatedRoute) {
 	}
@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit {
 	onLoginClick() {
 		this.errors = [];
 
-		if (this.username.length === 0 || this.password.length === 0) {
+		if (this.password.length === 0 || this.password.length === 0) {
 			this.errors.push('Preencha todos os campos.');
 			return;
 		}
